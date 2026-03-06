@@ -1,0 +1,15 @@
+body {
+    font-family: Arial;
+    margin: 20px;
+    transition: 0.3s;
+}
+
+.modo-obscuro {
+    background-color: #222;
+    color: white;
+}
+
+button {
+    margin: 5px;
+    padding: 8px 12px;
+}
