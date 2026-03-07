@@ -18,9 +18,19 @@ btnCambiarTitulo.addEventListener("click", () => {
 // Agregamos un evento de click al boton para agregar un servicio, y dentro de la funcion del evento, creamos un const  y despues creamos un nuevo elemento de lista con "createElement", le asignamos el texto del nuevo servicio con "textContent", y luego lo agregamos a la lista de servicios con "appendChild".
 
 btnAgregarServicio.addEventListener("click", () => {
-    const nuevoServicio = document.createElement("li"); // creamos un const y despues creamos un nuevo elemento con "createElement"
-    nuevoServicio.textContent = "nuevo servicio"; // en el const que creamos agregamos el texto que queremos que tenga dentro de el "li"
-    listaServicios.appendChild(nuevoServicio); // llamamos a la constante de nuestra lista y con appendChild agregamos un elemento al final de la lista
+    // Solicitamos al usuario que ingrese el nombre del servicio
+    const nombreServicio = prompt("Por favor, ingresa el nombre del nuevo servicio:", "nuevo servicio");
+    
+    // Verificamos que el usuario no haya cancelado el prompt y que haya ingresado algo
+    if (nombreServicio !== null && nombreServicio.trim() !== "") {
+        const nuevoServicio = document.createElement("li");
+        nuevoServicio.textContent = nombreServicio; // Usamos el nombre ingresado por el usuario
+        listaServicios.appendChild(nuevoServicio);
+    } else if (nombreServicio !== null && nombreServicio.trim() === "") {
+        // Si el usuario ingresó solo espacios en blanco
+        alert("Por favor, ingresa un nombre válido para el servicio");
+    }
+    // Si el usuario cancela el prompt (null), simplemente no hacemos nada
 });
 
 // Agregamos un evento de click al boton para activar el modo obscuro, y dentro de la funcion del evento, agregamos o quitamos la clase "obscuro" al cuerpo del documento con "classList.toggle", lo que nos permite cambiar entre el modo claro y el modo obscuro cada vez que se hace click en el boton.
