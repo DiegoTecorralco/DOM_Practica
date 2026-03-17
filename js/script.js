@@ -16,7 +16,7 @@ btnCambiarTitulo.addEventListener("click", () => {
 });
 
 // Agregamos un evento de click al boton para agregar un servicio, y dentro de la funcion del evento, creamos un const  y despues creamos un nuevo elemento de lista con "createElement", le asignamos el texto del nuevo servicio con "textContent", y luego lo agregamos a la lista de servicios con "appendChild".
-
+    
 btnAgregarServicio.addEventListener("click", () => {
     // Solicitamos al usuario que ingrese el nombre del servicio
     const nombreServicio = prompt("Por favor, ingresa el nombre del nuevo servicio:", "nuevo servicio");
